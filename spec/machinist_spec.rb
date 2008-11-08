@@ -18,6 +18,7 @@ end
 
 class Comment < Base
   attr_accessor :post
+  attr_accessor :post_id
   attr_accessor :author
   attr_accessor :body
 end

@@ -65,7 +65,11 @@ module Machinist
         value = if block
           block.call
         elsif args.first.is_a?(Hash) || args.empty?
-          symbol.to_s.camelize.constantize.make(args.first || {})
+          if @object.send("#{symbol}_id").nil? 
+            symbol.to_s.camelize.constantize.make(args.first || {})
+          else
+            @object.send(symbol)
+          end
         else
           args.first
         end
