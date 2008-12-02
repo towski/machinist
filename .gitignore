@@ -2,3 +2,4 @@ coverage
 active_record_context_plugin.sqlite3.db
 doc
 *.gem
+spec/debug.log
