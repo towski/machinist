@@ -1,5 +1,7 @@
 require 'active_support'
-
+require 'active_record'
+require 'sham'
+ 
 module Machinist
   def self.with_save_nerfed
     begin
@@ -79,3 +81,8 @@ module Machinist
     end
   end
 end
+
+class ActiveRecord::Base
+  include Machinist::ActiveRecordExtensions
+end
+
